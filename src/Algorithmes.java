@@ -103,7 +103,37 @@ public class Algorithmes {
 		
 		return getFournisseursRetenus();
 	}
-	
+	public Client alpha(List<Fournisseur> fournisseurs, List<Client> clients ){
+		int min=Integer.MAX_VALUE;
+		Client cl=null;
+		int c;
+		for(int i=0;i<fournisseurs.size();i++){
+			for (int j=0;j<clients.size();j++){
+				c=fournisseurs.get(i).getCoutsClients().get(clients.get(j).getId());
+				if(c<min){
+					c=min;
+					cl=clients.get(j);
+				}
+			}
+		}
+		return cl;
+	}
+
+	public List<Fournisseur> glouton2() {
+		int alpha;
+		List<Client> S = new ArrayList<Client>();
+		List<Fournisseur> oFournisseurs = new ArrayList<>();
+		int nbFournisseurs = getFournisseurs().size();
+		for(int i=0;i<Lecteur.nbClients;i++) S.add(new Client(i));
+
+		while(S.size()>0){
+
+		}
+		//ajout du premier (par défaut)
+		//getFournisseursRetenus().add(getFournisseurs().get(0));
+
+		return oFournisseurs;
+	}
 	public List<Fournisseur> getFournisseurs() {
 		return fournisseurs;
 	}
